@@ -1,0 +1,741 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!--Compatibility Calls-->
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <!--Base Level Styles-->        
+        <link rel="stylesheet" href="css/main.css">
+        <!--Header/Upper 3rd Styles-->
+        <link rel="stylesheet" href="css/matchup.css">
+        <!--Player Basic Info/Middle 3rd Styles-->
+        <link rel="stylesheet" href="css/playermiddle.css">
+        <!--Header/Upper 3rd Styles-->
+        <link rel="stylesheet" href="css/watchingstatusbottom.css">
+        <!--Header/Upper 3rd Styles-->
+        <link rel="stylesheet" href="css/flipclock.css">
+        <!--Header/Upper 3rd Styles-->
+        <link rel="stylesheet" href="css/videoAndPostgame.css">
+        <!--Header/Upper 3rd Styles-->
+        <script src="https://code.jquery.com/jquery-3.5.1.min.js">
+        </script>
+        <!--Header/Upper 3rd Styles-->
+        <script src="js/ws_subscriber.js"></script>
+    </head>
+    
+    <body class="main_container">
+        <div class="top_container" id="topCont">
+            <div class="title_container" id="titCont">
+                <p class="title" id="topHeaderTitle">JWRLCS Play-offs | Week 4</p>
+            </div>
+            
+            <div class="matchup_container">
+                <div class="blue_container">
+                    <div class="blue_logo">
+                        <img class="logo" id ="logoBlue" src="">
+                    </div>
+                    
+                    <div class="blue_name">
+                        <p class="blue_title" id="blueTeamP"></p>
+                    </div>
+                    
+                    <div class="blue_score">
+                        <p class="blue_goal_count" id="blSC"></p>
+                    </div>
+                </div>
+                
+                <div class="countdown_container">
+                    <p class="countdown_title" id="cntdwnTitle"></p>
+                </div>
+                
+                <div class="orange_container">
+                    <div class="orange_score">
+                        <p class="orange_goal_count" id="orSC"></p>
+                    </div>
+                    
+                    <div class="orange_name">
+                        <p class="orange_title" id="orangeTeamP"></p>
+                    </div>
+                    
+                    <div class="orange_logo">
+                        <img class="logo" id ="logoOrange" src="">
+                    </div>
+                </div>
+            </div>
+            
+            <div class="series_container" id="serCont">
+                <div class="blue_series">
+                    <div class="blue_check bl_ck"></div>
+                    <div class="blue_check bl_ck"></div>
+                    <div class="blue_check bl_ck"></div>
+                    <div class="blue_check bl_ck"></div>
+                </div>
+                
+                <div class="series_length" id="serTitle">
+                    <p class="title" id="seriesTitle">Game 1 | Bo7</p>
+                </div>
+                
+                <div class="orange_series">
+                    <div class="orange_check or_ck"></div>
+                    <div class="orange_check or_ck"></div>
+                    <div class="orange_check or_ck"></div>
+                    <div class="orange_check or_ck"></div>
+                </div>
+            </div>
+            
+            <div class="replay_icon" id="repCont">
+                <p class="replay_text">⦿ replay</p>
+            </div>
+            <div class="overtime_icon" id="otArea">
+                <p class="overtime_text">overtime</p>
+            </div>
+        </div>
+        
+        <div class="middle_container">
+            <div class="blue_players_container">
+                <div class="player_cont  bl_P1" id="mdrTop">
+                    <div class="bl_name">
+                        
+                    </div>
+                     
+                    <div class="bl_boost">
+                    </div>
+                    
+                    
+                    <input type="range" min="0" max="100" step="0.5" smooth=yes class="bl_boostmeter" id="">
+                    
+                </div>
+                
+                <div class="player_statfeed bl_P1_SF" id="blP1Sf">
+                </div>
+                
+                <div class="player_cont bl_P2" id="mdrMid">
+                    <div class="bl_name">
+                    
+                    </div>
+                    
+                    <div class="bl_boost">
+                    
+                    </div>
+                    
+                    
+                    <input type="range" min="0" max="100" class="bl_boostmeter" id="">
+                </div>
+                
+                <div class="player_statfeed bl_P2_SF" id="blP2Sf">
+                </div>
+                
+                <div class="player_cont bl_P3" id="mdrBot">
+                    <div class="bl_name">
+                    
+                    </div>
+                    
+                    <div class="bl_boost">
+                    
+                    </div>
+                    
+                    
+                    <input type="range" min="0" max="100" class="bl_boostmeter" id="">
+                </div>
+                
+                <div class="player_statfeed bl_P3_SF" id="blP3Sf">
+                </div>
+            </div>
+            
+            <div class="orange_players_container">
+                <div class="player_cont ol_P1" id="mdlTop">
+                    <div class="ol_name">
+                    
+                    </div>
+                    
+                    <div class="ol_boost">
+                    
+                    </div>
+                    
+                    <input type="range" min="0" max="100" class="ol_boostmeter" id="">
+                </div>
+                
+                <div class="player_statfeed ol_P1_SF" id="olP1Sf">
+                </div>
+                
+                <div class="player_cont ol_P2"  id="mdlMid">
+                    <div class="ol_name">
+                    
+                    </div>
+                    
+                    <div class="ol_boost">
+                    
+                    </div>
+                    
+                    <input type="range" min="0" max="100" class="ol_boostmeter" id="">
+                </div>
+                
+                <div class="player_statfeed ol_P2_SF" id="olP2Sf">
+                    
+                </div>
+                
+                <div class="player_cont ol_P3"  id="mdlBot">
+                    <div class="ol_name">
+                    
+                    </div>
+                    
+                    <div class="ol_boost">
+                    
+                    </div>
+                    
+                    <input type="range" min="0" max="100" class="ol_boostmeter" id="">
+                </div>
+                
+                <div class="player_statfeed ol_P3_SF" id="olP3Sf">
+                    
+                </div>
+            </div>
+        </div>
+        
+        <div class="bottom_container">
+            <div class="watching_statfeed_container watching_container" id="watchingCont">
+                <div class="watching_title">Watching</div>
+                <div class="watching_name_cont"></div>
+                <div class="watching_name">GlacialFrontier</div>
+                <div class="score_title">score</div>
+                    
+                <div class="watching_stat_titles">    
+                    <div class="score_goals">
+                        goals
+                    </div>
+                    <img class="score_icon_goals" id="" src="assets/staticons/goal.svg">
+                        
+                    <div class="score_shots">
+                        shots
+                    </div>
+                    <img class="score_icon_shots" id="" src="assets/staticons/shot-on-goal.svg">
+                    
+                    <div class="score_assists">
+                        assist
+                    </div>
+                    <img class="score_icon_assists" id="" src="assets/staticons/assist.svg">
+                    
+                    <div class="score_saves">
+                        saves
+                    </div>
+                    <img class="score_icon_saves" id="" src="assets/staticons/save.svg">
+                        
+                </div>
+                <div class="watching_stat_scores">
+                    <div class="score_stat">
+                        <span class="number" data-number="0">
+                          <span class="primary">
+                          </span>
+                          <span class="secondary">
+                          </span>
+                        </span>
+                        <span class="number" data-number="0">
+                          <span class="primary">
+                          </span>
+                          <span class="secondary">
+                          </span>
+                        </span>
+                        <span class="number" data-number="0">
+                          <span class="primary">
+                          </span>
+                          <span class="secondary">
+                          </span>
+                        </span>
+                        <span class="number" data-number="0">
+                          <span class="primary">
+                          </span>
+                          <span class="secondary">
+                          </span>
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="watching_stat_goals">
+                    <div class="goal_stat">
+                        <span class="number1" data-number="0">
+                          <span class="primary1">
+                          </span>
+                          <span class="secondary1">
+                          </span>
+                        </span>
+                        <span class="number1" data-number="0">
+                          <span class="primary1">
+                          </span>
+                          <span class="secondary1">
+                          </span>
+                        </span>
+                        <span class="number1" data-number="0">
+                          <span class="primary1">
+                          </span>
+                          <span class="secondary1">
+                          </span>
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="watching_stat_shots">
+                    <div class="shot_stat">
+                        <span class="number2" data-number="0">
+                          <span class="primary2">
+                          </span>
+                          <span class="secondary2">
+                          </span>
+                        </span>
+                        <span class="number2" data-number="0">
+                          <span class="primary2">
+                          </span>
+                          <span class="secondary2">
+                          </span>
+                        </span>
+                        <span class="number2" data-number="0">
+                          <span class="primary2">
+                          </span>
+                          <span class="secondary2">
+                          </span>
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="watching_stat_assist">
+                    <div class="assist_stat">
+                        <span class="number3" data-number="0">
+                          <span class="primary3">
+                          </span>
+                          <span class="secondary3">
+                          </span>
+                        </span>
+                        <span class="number3" data-number="0">
+                          <span class="primary3">
+                          </span>
+                          <span class="secondary3">
+                          </span>
+                        </span>
+                        <span class="number3" data-number="0">
+                          <span class="primary3">
+                          </span>
+                          <span class="secondary3">
+                          </span>
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="watching_stat_saves">
+                    <div class="saves_stat">
+                        <span class="number4" data-number="0">
+                          <span class="primary4">
+                          </span>
+                          <span class="secondary4">
+                          </span>
+                        </span>
+                        <span class="number4" data-number="0">
+                          <span class="primary4">
+                          </span>
+                          <span class="secondary4">
+                          </span>
+                        </span>
+                        <span class="number4" data-number="0">
+                          <span class="primary4">
+                          </span>
+                          <span class="secondary4">
+                          </span>
+                        </span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="watching_replay_card replay_card" id="replayCard">
+                    <div class="scorer_team_logo" id="scorerTeamLogo">
+                        <img class="logo" id="replayCardLogo" src="">
+                    </div>
+                    <div class="scorer_info">
+                        <div class="scorer_name" id="scorerName">
+                            Glacial Frontier
+                        </div>
+                        <div class="goal_icon">
+                            <img src="assets/staticons/goal.svg" class="statfeed_logos">
+                        </div>
+                        <div class="goal_speed" id="goalSpeed">Speed: 123/mph</div>
+                        <div class="assist_icon">
+                            <img src="assets/staticons/assist.svg" class="statfeed_logos">
+                        </div>
+                        <div class="goal_assisted" id="goalAssist">
+                        Glacial Frontier</div>
+                    </div>
+            </div>
+            
+            <div class="watching_boost_container" id="watchingBoostCont">
+                <div class="boost_background">
+                
+                
+                    <div class="wrapper">
+                        
+                      <svg class="ring" viewBox="0 0 200 200">
+                          
+                        <filter id="shadow">
+                          <feDropShadow dx="0" dy="0" stdDeviation="2"/>
+                        </filter>
+                          
+                        <filter id="dropshadow" x="-20%" y="-20%" width="140%" height="140%">
+                                <feGaussianBlur in="SourceAlpha" stdDeviation="3" result="blur" />
+                                <feOffset in="blur" dx="3" dy="3" result="offsetBlur" />
+                                <feFlood flood-color="#000000CC" flood-opacity="0.3" result="offsetColor"/>
+                                <feComposite in="offsetColor" in2="offsetBlur" operator="in" result="offsetBlur"/>
+                            <feMerge>
+                            <feMergeNode in="offsetBlur"/>
+                            <feMergeNode in="SourceGraphic"/>
+                            <feMergeNode in="glow"/>
+                            <feMergeNode in="glow"/>
+                            <feMergeNode in="glow"/>
+                            </feMerge>
+                        </filter>
+                          
+                          
+                        <g filter="url(#dropshadow)">
+                            <path class="ring-progress" d="M 100,190 A 90,90 0 0 1 10,100 A 90,90 0 0 1 100,10 A 90,90 0 0 1 190,100 A 90,90 0 0 1 100,190" stroke="transparent" stroke-width="16" fill="transparent"></path>
+                          </g>
+                          
+                        <g stroke="#f5f5f5" stroke-width="1.5" filter="url(#shadow)">
+                          <line x1="100" y1="20" x2="100" y2="0" transform="rotate(0,100,100)"></line>
+                          <line x1="100" y1="10" x2="100" y2="0" transform="rotate(7.5,100,100)"></line>
+                          <line x1="100" y1="10" x2="100" y2="0" transform="rotate(15,100,100)"></line>
+                          <line x1="100" y1="10" x2="100" y2="0" transform="rotate(22.5,100,100)"></line>
+                          <line x1="100" y1="15" x2="100" y2="0" transform="rotate(30,100,100)"></line>
+                          <line x1="100" y1="10" x2="100" y2="0" transform="rotate(37.5,100,100)"></line>
+                          <line x1="100" y1="10" x2="100" y2="0" transform="rotate(45,100,100)"></line>
+                          <line x1="100" y1="10" x2="100" y2="0" transform="rotate(52.5,100,100)"></line>
+                          <line x1="100" y1="15" x2="100" y2="0" transform="rotate(60,100,100)"></line>
+                          <line x1="100" y1="10" x2="100" y2="0" transform="rotate(67.5,100,100)"></line>
+                          <line x1="100" y1="10" x2="100" y2="0" transform="rotate(75,100,100)"></line>
+                          <line x1="100" y1="10" x2="100" y2="0" transform="rotate(82.5,100,100)"></line>
+                          <line x1="100" y1="20" x2="100" y2="0" transform="rotate(90,100,100)"></line>
+                          <line x1="100" y1="20" x2="100" y2="0" transform="rotate(180,100,100)"></line>
+                          <line x1="100" y1="10" x2="100" y2="0" transform="rotate(187.5,100,100)"></line>
+                          <line x1="100" y1="10" x2="100" y2="0" transform="rotate(195,100,100)"></line>
+                          <line x1="100" y1="10" x2="100" y2="0" transform="rotate(202.5,100,100)"></line>
+                          <line x1="100" y1="15" x2="100" y2="0" transform="rotate(210,100,100)"></line>
+                          <line x1="100" y1="10" x2="100" y2="0" transform="rotate(217.5,100,100)"></line>
+                          <line x1="100" y1="10" x2="100" y2="0" transform="rotate(225,100,100)"></line>
+                          <line x1="100" y1="10" x2="100" y2="0" transform="rotate(232.5,100,100)"></line>
+                          <line x1="100" y1="15" x2="100" y2="0" transform="rotate(240,100,100)"></line>
+                          <line x1="100" y1="10" x2="100" y2="0" transform="rotate(247.5,100,100)"></line>
+                          <line x1="100" y1="10" x2="100" y2="0" transform="rotate(255,100,100)"></line>
+                          <line x1="100" y1="10" x2="100" y2="0" transform="rotate(262.5,100,100)"></line>
+                          <line x1="100" y1="20" x2="100" y2="0" transform="rotate(270,100,100)"></line>
+                          <line x1="100" y1="10" x2="100" y2="0" transform="rotate(277.5,100,100)"></line>
+                          <line x1="100" y1="10" x2="100" y2="0" transform="rotate(285,100,100)"></line>
+                          <line x1="100" y1="10" x2="100" y2="0" transform="rotate(292.5,100,100)"></line>
+                          <line x1="100" y1="15" x2="100" y2="0" transform="rotate(300,100,100)"></line>
+                          <line x1="100" y1="10" x2="100" y2="0" transform="rotate(307.5,100,100)"></line>
+                          <line x1="100" y1="10" x2="100" y2="0" transform="rotate(315,100,100)"></line>
+                          <line x1="100" y1="10" x2="100" y2="0" transform="rotate(322.5,100,100)"></line>
+                          <line x1="100" y1="15" x2="100" y2="0" transform="rotate(330,100,100)"></line>
+                          <line x1="100" y1="10" x2="100" y2="0" transform="rotate(337.5,100,100)"></line>
+                          <line x1="100" y1="10" x2="100" y2="0" transform="rotate(345,100,100)"></line>
+                          <line x1="100" y1="10" x2="100" y2="0" transform="rotate(352.5,100,100)"></line>
+                        </g>
+
+                      </svg>
+                        
+                        <div class="mid_boost_cont">
+                            <text class="boost_text" x="50%" y="50%" text-anchor="bottom"  font-weight="bold" fill="#f5f5f5">0</text>
+                            <div class="watching_boost_title">boost</div>
+                        </div>
+                        
+                      <div class="text">
+                      </div>
+                </div>
+                    
+            </div>
+                    <div class="boost_background_details">
+                        <!--<div class="watching_boost_number"><p class="boost_number_p">100</p></div>
+                        <div class="watching_boost_title">boost</div>-->
+                    </div>
+            </div>
+        </div>
+        
+        
+
+
+        
+        <form class="initialForm" id="initialF">
+            <ul>
+                <li class="labels">
+                    <label>What type of series is this?</label>
+                </li>
+                
+                <li class="ckbxes">
+                    <select id="seriesList" name="Series">
+                        <option value="">Select Series you are playing</option>
+                        <option value="League Play">League Play</option>
+                        <option value="Playoffs">Playoffs</option>
+                        <option value="Championship">Championship</option>
+                    </select>
+                </li>
+                
+                <li class="labels">
+                    <label>What week are you in?</label>
+                </li>
+                
+                <li class="ckbxes">
+                    <select id="weekList" name="Week">
+                        <option value="">Select the Week of Play you are in</option>
+                        <option value="Week 1">Week 1</option>
+                        <option value="Week 2">Week 2</option>
+                        <option value="Week 3">Week 3</option>
+                        <option value="Week 4">Week 4</option>
+                        <option value="Week 5">Week 5</option>
+                        <option value="Week 6">Week 6</option>
+                        <option value="Week 7">Week 7</option>
+                        <option value="Week 8">Week 8</option>
+                        <option value="Week 9">Week 9</option>
+                        <option value="Week 10">Week 10</option>
+                        <option value="Week 11">Week 11</option>
+                        <option value="Week 12">Week 12</option>
+                        <option value="">Playoffs</option>
+                        <option value="">Quarter-Finals</option>
+                        <option value="">Semi-Finals</option>
+                        <option value="">Grand Finals</option>
+                    </select>
+                </li>
+                
+                <li class="labels">
+                    <label>What is the Series Length?</label>
+                </li>
+                
+                <li class="ckbxes">
+                    <select id="lengthList" name="Length">
+                        <option value=""></option>
+                        <option value="B03">Best of 3</option>
+                        <option value="B05">Best of 5</option>
+                        <option value="B07">Best of 7</option>
+                        <option value="B09">Best of 9</option>
+                    </select>
+                </li> 
+                
+                <li class="fmbtn">
+                    <button type="button" id="btnOverlay" onclick="submitForm()">Update Overlay</button>
+                </li>
+            </ul>
+        </form>
+        
+        <!-- Score textboxes for currently watching -->
+        <div id="number-input-score" class="hiddendivs"></div>
+        <div id="number-input-score-test" class="hiddendivs"></div>
+        
+        <!-- Goal textboxes for currently watching -->
+        <div id="number-input-goal" class="hiddendivs"></div>
+        <div id="number-input-goal-test" class="hiddendivs"></div>
+        
+        <!-- Score textboxes for currently watching -->
+        <div id="number-input-shots" class="hiddendivs"></div>
+        <div id="number-input-shots-test" class="hiddendivs"></div>
+        
+        <!-- Assist textboxes for currently watching -->
+        <div id="number-input-assist" class="hiddendivs"></div>
+        <div id="number-input-assist-test" class="hiddendivs"></div>
+        
+        <!-- Saves textboxes for currently watching -->
+        <div id="number-input-saves" class="hiddendivs"></div>
+        <div id="number-input-saves-test" class="hiddendivs"></div>
+        
+        <!-- Boost textboxes for currently watching -->
+        <div id="number-input-boost" class="hiddendivs"></div>
+        <div id="number-input-boost-test" class="hiddendivs"></div>
+        
+        
+        
+        
+        
+        <video id="transitionVid" class="trans_vid" autoplay>
+        </video>
+        <video id="waitTransitionVid" class="trans_vid" autoplay loop>
+        </video>
+        
+        <div class="postGameStatsCont" id="postGameStats">
+            
+            <div class="postgame_title"></div>
+            
+            <div class="blue_logo_postgame">
+                <img class="mvp_postgame" id ="logoBluePost" src="">
+            </div>
+            <div class="blue_teamname_postgame">test</div>
+            <div class="blue_goal_postgame">1</div>
+            
+            <div class="game_count_postgame">Gam 1</div>
+            <div class="game_bestof_postgame">Bo7</div>
+        
+            <div class="orange_goal_postgame">1</div>
+            <div class="orange_teamname_postgame">test2</div>
+            <div class="orange_logo_postgame">
+                <img class="mvp_postgame" id ="logoOrangePost" src="">            
+            </div>
+            
+            <div class="game_leading_postgame"></div>
+            
+            <div class="mvp_icon_l" id="iconL">
+                <img class="mvp_postgame" id="" src="assets/staticons/win.svg">
+            </div>
+            
+            <div class="mvp_icon_r" id="iconR">
+                <img class="mvp_postgame" id="" src="assets/staticons/win.svg">
+            </div>
+            
+            <div class="blue_player1_postgame">Garter</div>
+            <div class="blue_player2_postgame">Garrieth</div>
+            <div class="blue_player3_postgame">Glacial Frontier</div>
+            
+            <div class="orange_player3_postgame">a smart alec</div>
+            <div class="orange_player2_postgame">zeepool</div>
+            <div class="orange_player1_postgame">Joedune. UWU</div>
+            
+            <div class=" bl_p1_pg">
+                <img class="mvp_postgame" id="" src="assets/staticons/mvp.svg">
+            </div>
+            <div class="bl_p2_pg">
+                <img class="mvp_postgame" id="" src="assets/staticons/mvp.svg">
+            </div>
+            <div class="bl_p3_pg">
+                <img class="mvp_postgame" id="" src="assets/staticons/mvp.svg">
+            </div>
+            
+            <div class="or_p3_pg">
+                <img class="mvp_postgame" id="" src="assets/staticons/mvp.svg">
+            </div>
+            <div class="or_p2_pg">
+                <img class="mvp_postgame" id="" src="assets/staticons/mvp.svg">
+            </div>
+            <div class="or_p1_pg">
+                <img class="mvp_postgame" id="" src="assets/staticons/mvp.svg">
+            </div>
+            
+            <div class="blue1_scoreVal_postgame">222</div>
+            <div class="blue2_scoreVal_postgame">333</div>
+            <div class="blue3_scoreVal_postgame">111</div>
+            
+                <input class="score_range_style" type="range" id="scoreRange" value="" max="">
+            
+            <div class="orange3_scoreVal_postgame">753</div>
+            <div class="orange2_scoreVal_postgame">33</div>
+            <div class="orange1_scoreVal_postgame">124</div>
+            
+            
+            <div class="blue1_goalVal_postgame">0</div>
+            <div class="blue2_goalVal_postgame">0</div>
+            <div class="blue3_goalVal_postgame">0</div>
+            
+            
+            <div class="boost_icon_l">
+                <img class="mvp_postgame" id="" src="assets/staticons/goal.svg">
+            </div>
+            
+                <input class="score_range_style" type="range" id="goalRange" value="" max="">
+            
+            <div class="boost_icon_r">
+                <img class="mvp_postgame" id="" src="assets/staticons/goal.svg">
+            </div>
+            
+            <div class="orange3_goalVal_postgame">0</div>
+            <div class="orange2_goalVal_postgame">0</div>
+            <div class="orange1_goalVal_postgame">0</div>
+            
+            
+            <div class="blue1_assistVal_postgame">0</div>
+            <div class="blue2_assistVal_postgame">0</div>
+            <div class="blue3_assistVal_postgame">0</div>
+            
+            
+            <div class="assist_icon_l">
+                <img class="mvp_postgame" id="" src="assets/staticons/assist.svg">
+            </div>
+            
+                <input class="score_range_style" type="range" id="assistRange" value="" max="">
+            
+            <div class="assist_icon_r">
+                <img class="mvp_postgame" id="" src="assets/staticons/assist.svg">
+            </div>
+            
+            <div class="orange3_assistVal_postgame">0</div>
+            <div class="orange2_assistVal_postgame">0</div>
+            <div class="orange1_assistVal_postgame">0</div>
+            
+            
+            <div class="blue1_shotVal_postgame">0</div>
+            <div class="blue2_shotVal_postgame">0</div>
+            <div class="blue3_shotVal_postgame">0</div>
+            
+            
+            <div class="shots_icon_l">
+                <img class="mvp_postgame" id="" src="assets/staticons/shot-on-goal.svg">
+            </div>
+            
+                <input class="score_range_style" type="range" id="shotsRange" value="" max="">
+            
+            <div class="shots_icon_r">
+                <img class="mvp_postgame" id="" src="assets/staticons/shot-on-goal.svg">
+            </div>
+            
+            <div class="orange3_shotVal_postgame">0</div>
+            <div class="orange2_shotVal_postgame">0</div>
+            <div class="orange1_shotVal_postgame">0</div>
+            
+            
+            <div class="blue1_saveVal_postgame">0</div>
+            <div class="blue2_saveVal_postgame">0</div>
+            <div class="blue3_saveVal_postgame">0</div>
+            
+            
+            <div class="saves_icon_l">
+                <img class="mvp_postgame" id="" src="assets/staticons/save.svg">
+            </div>
+            
+                <input class="score_range_style" type="range" id="savesRange" value="" max="">
+            
+            <div class="saves_icon_r">
+                <img class="mvp_postgame" id="" src="assets/staticons/save.svg">
+            </div>
+            
+            <div class="orange3_saveVal_postgame">0</div>
+            <div class="orange2_saveVal_postgame">0</div>
+            <div class="orange1_saveVal_postgame">0</div>
+            
+            
+            <div class="blue1_demoVal_postgame">0</div>
+            <div class="blue2_demoVal_postgame">0</div>
+            <div class="blue3_demoVal_postgame">0</div>
+            
+            
+            <div class="demos_icon_l">
+                <img class="mvp_postgame" id="" src="assets/staticons/demolition.svg">
+            </div>
+            
+                <input class="score_range_style" type="range" id="demoRange" value="" max="">
+            
+            <div class="demos_icon_r">
+                <img class="mvp_postgame" id="" src="assets/staticons/demolition.svg">
+            </div>
+            
+            <div class="orange3_demoVal_postgame">0</div>
+            <div class="orange2_demoVal_postgame">0</div>
+            <div class="orange1_demoVal_postgame">0</div>
+            
+            
+        </div>
+        
+        
+        
+        
+    </body>
+    
+        
+        <script src="js/OverlayLoadForm.js"></script>
+       <!-- <script src="js/base.js"></script>-->
+        <script></script>
+        <script src="js/ws_subscriber.js"></script>
+        <script src="js/scoreboardConnect.js"></script>
+        <script src="js/PlayerStatList.js"></script>
+        <script src="js/flipclock.js"></script>
+        
+    
+</html>
+
+    

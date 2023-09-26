@@ -1,0 +1,673 @@
+.trans_vid {
+    grid-column: 1 / 4;
+    grid-row: 1 / 4;
+    width: 100%;
+    height: auto;
+    align-self: stretch;
+    justify-self: stretch;
+    place-items: stretch;
+    z-index: 2; 
+}
+
+.postGameStatsCont {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    display: grid;
+    justify-content: stretch;
+    align-content: stretch;
+    justify-items: stretch;
+    align-items: stretch;
+    grid: 5% 1% 2% 1% 2% 1.5% 2% 2.5% 5.5% 4.5% 2% 7% 1.5% 5.5% 1% 1.75% 2.5% 5.5% 1.5% 1.75% 1.5% 5.5% 2.25% 1.75% 2% 5.5% 2.25% 1.75% 2% 5.5% 2% 1.75% 2% 5.5% 1.75% / 7.5% 12% 12% 10% 1.5% 3% 8% 3% 1.5% 10% 12% 12% 7.5%;
+    background-image: url(statsscreen-V1-ready.png);
+    background-size: cover;
+    z-index: 1;
+    opacity: 0;
+}
+
+.postgame_title {
+    grid-column: 4 / 11;
+    grid-row: 1 / 2;
+}
+
+.blue_logo_postgame {
+    grid-column: 2 / 3;
+    grid-row: 3 / 8;
+    height: 100%;
+    align-self: center;
+    justify-self: center;
+    
+}
+
+.blue_teamname_postgame {
+    grid-column: 3 / 5;
+    grid-row: 4 / 7;
+    align-self: center;
+    justify-self: center;
+    font-weight: 600;
+    font-size: 2.25em;
+}
+
+.blue_goal_postgame {
+    grid-column: 5 / 7;
+    grid-row: 3 / 8;
+    align-self: center;
+    justify-self: center;
+    font-weight: 600;
+    font-size: 2.75em;    
+}
+
+.game_count_postgame {
+    grid-column: 7 / 8;
+    grid-row: 3 / 5;
+    align-self: center;
+    justify-self: center;
+    font-weight: 600;
+    font-size: 2em;   
+}
+
+.game_bestof_postgame {
+    grid-column: 7 / 8;
+    grid-row: 5 / 7;
+    align-self: center;
+    justify-self: center;
+    font-weight: 600;
+    font-size: 1.5em;  
+}
+
+.orange_goal_postgame {
+    grid-column: 8 / 10;
+    grid-row: 3 / 8;
+    align-self: center;
+    justify-self: center;
+    font-weight: 600;
+    font-size: 2.75em;    
+}
+
+.orange_teamname_postgame {
+    grid-column: 10 / 12;
+    grid-row: 4 / 7;
+    align-self: center;
+    justify-self: center;
+    font-weight: 600;
+    font-size: 2.25em;
+}
+
+.orange_logo_postgame {
+    grid-column: 12 / 13;
+    grid-row: 3 / 8;
+    height: 100%;
+    align-self: center;
+    justify-self: center;
+}
+
+.game_leading_postgame {
+    grid-column: 4 / 11;
+    grid-row: 8 / 9;
+    align-self: center;
+    justify-self: center;
+    font-weight: 400;
+    font-size: 1.65em;  
+}
+
+.mvp_icon_l {
+    grid-column: 3 / 4;
+    grid-row: 9 / 10;
+    filter: invert(91%) sepia(91%) saturate(9%) hue-rotate(113deg) brightness(106%) contrast(92%) drop-shadow(0 0 10px #1923e7);
+    opacity: 1;    
+}
+
+.mvp_icon_r {
+    grid-column: 11 / 12;
+    grid-row: 9 / 10;
+    filter: invert(91%) sepia(91%) saturate(9%) hue-rotate(113deg) brightness(106%) contrast(92%) drop-shadow(0 0 10px #ffb910);
+    transform:scaleX(-1)
+}
+
+.blue_player1_postgame {
+    grid-column: 2 / 3;
+    grid-row: 10 / 11;
+    align-self: center;
+    justify-self: center;
+    font-weight: 600;
+    font-size: 1.25em;
+}
+
+.blue_player2_postgame {
+    grid-column: 3 / 4;
+    grid-row: 10 / 11;
+    align-self: center;
+    justify-self: center;
+    font-weight: 600;
+    font-size: 1.25em;
+}
+
+.blue_player3_postgame {
+    grid-column: 4 / 6;
+    grid-row: 10 / 11;
+    align-self: center;
+    text-align: center;
+    max-height: 100%;
+    justify-self: center;
+    font-weight: 600;
+    font-size: 1.25em;
+}
+
+.orange_player1_postgame {
+    grid-column: 12 / 13;
+    grid-row: 10 / 11;
+    align-self: center;
+    justify-self: center;
+    font-weight: 600;
+    font-size: 1.25em;
+}
+
+.orange_player2_postgame {
+    grid-column: 11 / 12;
+    grid-row: 10 / 11;
+    align-self: center;
+    justify-self: center;
+    font-weight: 600;
+    font-size: 1.25em;
+}
+
+.orange_player3_postgame {
+    grid-column: 9 / 11;
+    grid-row: 10 / 11;
+    align-self: center;
+    justify-self: center;
+    font-weight: 600;
+    font-size: 1.25em;
+}
+
+.mvp_postgame {
+    height: 98%;
+    width: 98%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.bl_p1_pg {
+    grid-column: 2 / 3;
+    grid-row: 12 / 13;
+    filter: invert(91%) sepia(91%) saturate(9%) hue-rotate(113deg) brightness(106%) contrast(92%) drop-shadow(0 0 10px #1923e7);
+    opacity: 1;
+}
+
+.bl_p2_pg {
+    grid-column: 3 / 4;
+    grid-row: 12 / 13;
+    filter: invert(91%) sepia(91%) saturate(9%) hue-rotate(113deg) brightness(106%) contrast(92%) drop-shadow(0 0 10px #1923e7);
+}
+
+.bl_p3_pg {
+    grid-column: 4 / 6;
+    grid-row: 12 / 13;
+    filter: invert(91%) sepia(91%) saturate(9%) hue-rotate(113deg) brightness(106%) contrast(92%) drop-shadow(0 0 10px #1923e7);
+}
+
+.or_p1_pg {
+    grid-column: 12 / 13;
+    grid-row: 12 / 13;
+    filter: invert(91%) sepia(91%) saturate(9%) hue-rotate(113deg) brightness(106%) contrast(92%) drop-shadow(0 0 10px #ffb910);
+}
+
+.or_p2_pg {
+    grid-column: 11 / 12;
+    grid-row: 12 / 13;
+    filter: invert(91%) sepia(91%) saturate(9%) hue-rotate(113deg) brightness(106%) contrast(92%) drop-shadow(0 0 10px #ffb910);
+}
+
+.or_p3_pg {
+    grid-column: 9 / 11;
+    grid-row: 12 / 13;
+    filter: invert(91%) sepia(91%) saturate(9%) hue-rotate(113deg) brightness(106%) contrast(92%) drop-shadow(0 0 10px #ffb910);
+}
+
+.blue1_scoreVal_postgame {
+    grid-column: 2 / 3;
+    grid-row: 14 / 15;
+    align-self: center;
+    justify-self: center;
+    font-weight: 600;
+    font-size: 2.75em;
+}
+
+.blue2_scoreVal_postgame {
+    grid-column: 3 / 4;
+    grid-row: 14 / 15;
+    align-self: center;
+    justify-self: center;
+    font-weight: 600;
+    font-size: 2.75em;
+}
+
+.blue3_scoreVal_postgame {
+    grid-column: 4 / 6;
+    grid-row: 14 / 15;
+    align-self: center;
+    justify-self: center;
+    font-weight: 600;
+    font-size: 2.75em;
+}
+
+#scoreRange {
+    grid-column: 6 / 9;
+    grid-row: 16 / 17;
+}
+
+.orange1_scoreVal_postgame {
+    grid-column: 12 / 13;
+    grid-row: 14 / 15;
+    align-self: center;
+    justify-self: center;
+    font-weight: 600;
+    font-size: 2.75em;
+}
+
+.orange2_scoreVal_postgame {
+    grid-column: 11 / 12;
+    grid-row: 14 / 15;
+    align-self: center;
+    justify-self: center;
+    font-weight: 600;
+    font-size: 2.75em;
+}
+
+.orange3_scoreVal_postgame {
+    grid-column: 9 / 11;
+    grid-row: 14 / 15;
+    align-self: center;
+    justify-self: center;
+    font-weight: 600;
+    font-size: 2.75em;
+}
+
+.blue1_goalVal_postgame {
+    grid-column: 2 / 3;
+    grid-row: 18 / 19;
+    align-self: center;
+    justify-self: center;
+    font-weight: 600;
+    font-size: 2.75em;   
+}
+
+.blue2_goalVal_postgame {
+    grid-column: 3 / 4;
+    grid-row: 18 / 19;
+    align-self: center;
+    justify-self: center;
+    font-weight: 600;
+    font-size: 2.75em;   
+}
+
+.blue3_goalVal_postgame {
+    grid-column: 4 / 6;
+    grid-row: 18 / 19;
+    align-self: center;
+    justify-self: center;
+    font-weight: 600;
+    font-size: 2.75em;   
+}
+
+.boost_icon_l {
+    grid-column: 6 / 7;
+    grid-row: 18 / 19;
+    filter: invert(91%) sepia(91%) saturate(9%) hue-rotate(113deg) brightness(106%) contrast(92%) drop-shadow(0 0 10px #1923e7);
+    opacity: 1;    
+}
+
+#goalRange {
+    grid-column: 6 / 9;
+    grid-row: 20 / 21;
+}
+
+.boost_icon_r {
+    grid-column: 8 / 9;
+    grid-row: 18 / 19;
+    filter: invert(91%) sepia(91%) saturate(9%) hue-rotate(113deg) brightness(106%) contrast(92%) drop-shadow(0 0 10px #ffb910);
+    transform:scaleX(-1)
+}
+
+.orange1_goalVal_postgame {
+    grid-column: 12 / 13;
+    grid-row: 18 / 19;
+    align-self: center;
+    justify-self: center;
+    font-weight: 600;
+    font-size: 2.75em;
+}
+
+.orange2_goalVal_postgame {
+    grid-column: 11 / 12;
+    grid-row: 18 / 19;
+    align-self: center;
+    justify-self: center;
+    font-weight: 600;
+    font-size: 2.75em;
+}
+
+.orange3_goalVal_postgame {
+    grid-column: 9 / 11;
+    grid-row: 18 / 19;
+    align-self: center;
+    justify-self: center;
+    font-weight: 600;
+    font-size: 2.75em;
+}
+
+.blue1_assistVal_postgame {
+    grid-column: 2 / 3;
+    grid-row: 22 / 23;
+    align-self: center;
+    justify-self: center;
+    font-weight: 600;
+    font-size: 2.75em;   
+}
+
+.blue2_assistVal_postgame {
+    grid-column: 3 / 4;
+    grid-row: 22 / 23;
+    align-self: center;
+    justify-self: center;
+    font-weight: 600;
+    font-size: 2.75em;   
+}
+
+.blue3_assistVal_postgame {
+    grid-column: 4 / 6;
+    grid-row: 22 / 23;
+    align-self: center;
+    justify-self: center;
+    font-weight: 600;
+    font-size: 2.75em;   
+}
+
+.assist_icon_l {
+    grid-column: 6 / 7;
+    grid-row: 22 / 23;
+    filter: invert(91%) sepia(91%) saturate(9%) hue-rotate(113deg) brightness(106%) contrast(92%) drop-shadow(0 0 10px #1923e7);
+    opacity: 1;    
+}
+
+#assistRange {
+    grid-column: 6 / 9;
+    grid-row: 24 / 25;
+}
+
+.assist_icon_r {
+    grid-column: 8 / 9;
+    grid-row: 22 / 23;
+    filter: invert(91%) sepia(91%) saturate(9%) hue-rotate(113deg) brightness(106%) contrast(92%) drop-shadow(0 0 10px #ffb910);
+    transform:scaleX(-1)
+}
+
+.orange1_assistVal_postgame {
+    grid-column: 12 / 13;
+    grid-row: 22 / 23;
+    align-self: center;
+    justify-self: center;
+    font-weight: 600;
+    font-size: 2.75em;
+}
+
+.orange2_assistVal_postgame {
+    grid-column: 11 / 12;
+    grid-row: 22 / 23;
+    align-self: center;
+    justify-self: center;
+    font-weight: 600;
+    font-size: 2.75em;
+}
+
+.orange3_assistVal_postgame {
+    grid-column: 9 / 11;
+    grid-row: 22 / 23;
+    align-self: center;
+    justify-self: center;
+    font-weight: 600;
+    font-size: 2.75em;
+}
+
+.blue1_shotVal_postgame {
+    grid-column: 2 / 3;
+    grid-row: 26 / 27;
+    align-self: center;
+    justify-self: center;
+    font-weight: 600;
+    font-size: 2.75em;   
+}
+
+.blue2_shotVal_postgame {
+    grid-column: 3 / 4;
+    grid-row: 26 / 27;
+    align-self: center;
+    justify-self: center;
+    font-weight: 600;
+    font-size: 2.75em;   
+}
+
+.blue3_shotVal_postgame {
+    grid-column: 4 / 6;
+    grid-row: 26 / 27;
+    align-self: center;
+    justify-self: center;
+    font-weight: 600;
+    font-size: 2.75em;   
+}
+
+.shots_icon_l {
+    grid-column: 6 / 7;
+    grid-row: 26 / 27;
+    filter: invert(91%) sepia(91%) saturate(9%) hue-rotate(113deg) brightness(106%) contrast(92%) drop-shadow(0 0 10px #1923e7);
+    opacity: 1;    
+}
+
+#shotsRange {
+    grid-column: 6 / 9;
+    grid-row: 28 / 29;
+}
+
+.shots_icon_r {
+    grid-column: 8 / 9;
+    grid-row: 26 / 27;
+    filter: invert(91%) sepia(91%) saturate(9%) hue-rotate(113deg) brightness(106%) contrast(92%) drop-shadow(0 0 10px #ffb910);
+    transform:scaleX(-1)
+}
+
+.orange1_shotVal_postgame {
+    grid-column: 12 / 13;
+    grid-row: 26 / 27;
+    align-self: center;
+    justify-self: center;
+    font-weight: 600;
+    font-size: 2.75em;
+}
+
+.orange2_shotVal_postgame {
+    grid-column: 11 / 12;
+    grid-row: 26 / 27;
+    align-self: center;
+    justify-self: center;
+    font-weight: 600;
+    font-size: 2.75em;
+}
+
+.orange3_shotVal_postgame {
+    grid-column: 9 / 11;
+    grid-row: 26 / 27;
+    align-self: center;
+    justify-self: center;
+    font-weight: 600;
+    font-size: 2.75em;
+}
+
+.blue1_saveVal_postgame {
+    grid-column: 2 / 3;
+    grid-row: 30 / 31;
+    align-self: center;
+    justify-self: center;
+    font-weight: 600;
+    font-size: 2.75em;   
+}
+
+.blue2_saveVal_postgame {
+    grid-column: 3 / 4;
+    grid-row: 30 / 31;
+    align-self: center;
+    justify-self: center;
+    font-weight: 600;
+    font-size: 2.75em;   
+}
+
+.blue3_saveVal_postgame {
+    grid-column: 4 / 6;
+    grid-row: 30 / 31;
+    align-self: center;
+    justify-self: center;
+    font-weight: 600;
+    font-size: 2.75em;   
+}
+
+.saves_icon_l {
+    grid-column: 6 / 7;
+    grid-row: 30 / 31;
+    filter: invert(91%) sepia(91%) saturate(9%) hue-rotate(113deg) brightness(106%) contrast(92%) drop-shadow(0 0 10px #1923e7);
+    opacity: 1;    
+}
+
+#savesRange {
+    grid-column: 6 / 9;
+    grid-row: 32 / 33;
+}
+
+.saves_icon_r {
+    grid-column: 8 / 9;
+    grid-row: 30 / 31;
+    filter: invert(91%) sepia(91%) saturate(9%) hue-rotate(113deg) brightness(106%) contrast(92%) drop-shadow(0 0 10px #ffb910);
+    transform:scaleX(-1)
+}
+
+.orange1_saveVal_postgame {
+    grid-column: 12 / 13;
+    grid-row: 30 / 31;
+    align-self: center;
+    justify-self: center;
+    font-weight: 600;
+    font-size: 2.75em;
+}
+
+.orange2_saveVal_postgame {
+    grid-column: 11 / 12;
+    grid-row: 30 / 31;
+    align-self: center;
+    justify-self: center;
+    font-weight: 600;
+    font-size: 2.75em;
+}
+
+.orange3_saveVal_postgame {
+    grid-column: 9 / 11;
+    grid-row: 30 / 31;
+    align-self: center;
+    justify-self: center;
+    font-weight: 600;
+    font-size: 2.75em;
+}
+
+.blue1_demoVal_postgame {
+    grid-column: 2 / 3;
+    grid-row: 34 / 35;
+    align-self: center;
+    justify-self: center;
+    font-weight: 600;
+    font-size: 2.75em;   
+}
+
+.blue2_demoVal_postgame {
+    grid-column: 3 / 4;
+    grid-row: 34 / 35;
+    align-self: center;
+    justify-self: center;
+    font-weight: 600;
+    font-size: 2.75em;   
+}
+
+.blue3_demoVal_postgame {
+    grid-column: 4 / 6;
+    grid-row: 34 / 35;
+    align-self: center;
+    justify-self: center;
+    font-weight: 600;
+    font-size: 2.75em;   
+}
+
+.demos_icon_l {
+    grid-column: 6 / 7;
+    grid-row: 34 / 35;
+    filter: invert(91%) sepia(91%) saturate(9%) hue-rotate(113deg) brightness(106%) contrast(92%) drop-shadow(0 0 10px #1923e7);
+    opacity: 1;    
+}
+
+#demoRange {
+    grid-column: 6 / 9;
+    grid-row: 35 / 36;
+}
+
+.demos_icon_r {
+    grid-column: 8 / 9;
+    grid-row: 34 / 35;
+    filter: invert(91%) sepia(91%) saturate(9%) hue-rotate(113deg) brightness(106%) contrast(92%) drop-shadow(0 0 10px #ffb910);
+    transform:scaleX(-1)
+}
+
+.orange1_demoVal_postgame {
+    grid-column: 12 / 13;
+    grid-row: 34 / 35;
+    align-self: center;
+    justify-self: center;
+    font-weight: 600;
+    font-size: 2.75em;
+}
+
+.orange2_demoVal_postgame {
+    grid-column: 11 / 12;
+    grid-row: 34 / 35;
+    align-self: center;
+    justify-self: center;
+    font-weight: 600;
+    font-size: 2.75em;
+}
+
+.orange3_demoVal_postgame {
+    grid-column: 9 / 11;
+    grid-row: 34 / 35;
+    align-self: center;
+    justify-self: center;
+    font-weight: 600;
+    font-size: 2.75em;
+}
+
+.score_range_style {
+    -webkit-appearance: none;
+    height: 25%;
+    justify-content: center;
+    align-content: center;
+    justify-items: center;
+    align-items: center;
+    background: rgba(233,149,37,1);
+    vertical-align: middle;
+    overflow: hidden;
+    margin: auto 0;
+}
+
+.score_range_style::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 3px;
+    height: 110%;
+    background: rgba(7,28,205,1);
+    box-shadow: -407px 0 1px 407px rgba(7,28,205,1);
+    transition: all 0.3s ease-in-out;
+    z-index: 1;
+}
